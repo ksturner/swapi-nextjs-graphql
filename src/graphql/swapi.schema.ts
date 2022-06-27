@@ -12,11 +12,11 @@ export const dateScalar = new GraphQLScalarType({
         }
         return new Date(value);
     },
-    serialize(value: unknown): string {
-        if (!(value instanceof Date)) {
-            throw new Error('Not a date');
+    serialize(value: unknown): Date {
+        if (!(typeof value === 'string')) {
+            throw new Error('not a string');
         }
-        return value.toISOString();
+        return new Date(value);
     },
     parseLiteral(ast: any): Date {
         if (ast.kind !== Kind.STRING) {
@@ -94,7 +94,7 @@ export const typeDefs = gql`
     type Query {
         getCharacters: [Character]
         getCharacter(id: ID!): Character
-        searchCharacters(text: String): [Character]
+        searchCharacters(text: String!): [Character]
     }
 `;
 

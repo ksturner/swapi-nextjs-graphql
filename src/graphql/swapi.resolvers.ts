@@ -7,7 +7,9 @@ const resolvers = {
     Query: {
         getCharacters: async () => {
             try {
+                console.log('here');
                 const r = await axios.get('https://swapi.dev/api/people');
+                console.log(r.data.results);
                 return r.data.results; // This has pagination information too
             } catch (err) {
                 return [];

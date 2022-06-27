@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 const Home: NextPage = () => {
@@ -20,9 +21,13 @@ const Home: NextPage = () => {
                     Welcome to <a href="https://nextjs.org">Next.js!</a>
                 </h1>
 
-                <h1 className="text-3xl font-bold underline text-red-500">
+                <h1 className="text-3xl font-bold text-red-500">
                     Hello world, from TailwindCSS!
                 </h1>
+
+                <span className="underline text-blue-600">
+                    <Link href="/search">Visit the SWApi Search Page</Link>
+                </span>
 
                 <p className={styles.description}>
                     Get started by editing{' '}

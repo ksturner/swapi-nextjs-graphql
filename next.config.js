@@ -2,6 +2,6 @@
 module.exports = {
     reactStrictMode: true,
     env: {
-        BASE_DOMAIN: 'http://localhost:3001',
+        BASE_DOMAIN: 'http://localhost:3100',
     },
 };

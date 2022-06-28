@@ -8,7 +8,7 @@ export default function Custom404() {
                     404
                 </h1>
                 <h2 className="inline text-left pl-2">
-                    These are not the droids you're looking for.
+                    These are not the droids you&apos;re looking for.
                 </h2>
             </div>
         </div>

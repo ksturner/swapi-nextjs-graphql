@@ -93,7 +93,7 @@ export default function SearchCharacters({}: Props) {
             </div>
             <div className="text-center p-2">
                 <input
-                    className="m-2 p-2 rounded bg-gray-50 hover:bg-white hover:border-blue-500 transition border-2"
+                    className="m-2 p-2 rounded bg-gray-50 hover:bg-white hover:border-yellow-500 transition border-2"
                     type="text"
                     ref={searchInputRef}
                     name="search"

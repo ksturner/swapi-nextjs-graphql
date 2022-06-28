@@ -3,10 +3,6 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: 'Starjedi';
-    src: url('/Starjedi.ttf');
-}
-@font-face {
     font-family: 'Soloist';
     src: url('/Soloist.otf');
 }

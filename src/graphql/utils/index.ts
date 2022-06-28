@@ -6,7 +6,12 @@ import axios from 'axios';
  * object schema from SWapi
  */
 export const populateIDFromUrl = (obj: { url: string }) => {
-    return obj?.url ? obj.url?.split('/').pop() : null;
+    return obj?.url
+        ? obj.url
+              ?.split('/')
+              .filter((x) => x !== '')
+              .pop()
+        : null;
 };
 
 /**

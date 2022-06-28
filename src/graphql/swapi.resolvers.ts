@@ -51,6 +51,12 @@ const resolvers = {
     Starship: {
         id: populateIDFromUrl,
     },
+    Species: {
+        id: populateIDFromUrl,
+    },
+    Vehicle: {
+        id: populateIDFromUrl,
+    },
     Character: {
         id: populateIDFromUrl,
         homeworld: async (character: any) => {
@@ -66,6 +72,12 @@ const resolvers = {
         },
         films: async (character: any) => {
             return await fetchListOfUrlObjects(character.films);
+        },
+        species: async (character: any) => {
+            return await fetchListOfUrlObjects(character.species);
+        },
+        vehicles: async (character: any) => {
+            return await fetchListOfUrlObjects(character.vehicles);
         },
     },
 };

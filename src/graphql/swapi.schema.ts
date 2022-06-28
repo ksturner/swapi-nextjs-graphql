@@ -53,6 +53,14 @@ export const typeDefs = gql`
         producer: String
         release_date: String
     }
+    type Vehicle {
+        id: ID!
+        name: String
+    }
+    type Species {
+        id: ID!
+        name: String
+    }
     type Starship {
         id: ID!
         name: String
@@ -84,8 +92,8 @@ export const typeDefs = gql`
         gender: String
         homeworld: Homeworld
         films: [Film]
-        species: [String]
-        vehicles: [String]
+        species: [Species]
+        vehicles: [Vehicle]
         starships: [Starship]
         created: DateTime
         edited: DateTime

@@ -40,11 +40,13 @@ function SearchResults({ searchInProgress, results }: Props) {
             </div>
         );
     } else if (results && results.length !== 0) {
+        console.log(results);
         return (
             <div className="grid grid-cols-2">
                 {results.map((r, idx) => {
-                    // return <p key={'person-' + idx}>{r.name}</p>;
+                    const moreUrl = '/character/' + r.id;
                     let pronoun, birthed;
+
                     switch (r.gender) {
                         case 'male':
                             pronoun = 'He is';
@@ -60,7 +62,7 @@ function SearchResults({ searchInProgress, results }: Props) {
                             break;
                     }
                     let extraInfo = `Eye color is ${r.eye_color}`;
-                    if (r.hair_color !== 'n/a') {
+                    if (r.hair_color !== 'n/a' && r.hair_color !== 'none') {
                         extraInfo += `, hair color is ${r.hair_color}`;
                     }
                     if (r.skin_color !== 'n/a') {
@@ -82,7 +84,7 @@ function SearchResults({ searchInProgress, results }: Props) {
                                     {extraInfo}
                                 </p>
 
-                                <Link href="/more">
+                                <Link href={moreUrl}>
                                     <button
                                         type="button"
                                         className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"

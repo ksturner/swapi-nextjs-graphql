@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { debounce } from 'lodash';
 import { gql } from '@apollo/client';
 import client from '../graphql/client';
@@ -13,6 +13,14 @@ export default function SearchCharacters({}: Props) {
     const [searchText, setSearchText] = useState<string | null>(null);
     const [searchInProgress, setSearchInProgress] = React.useState(false);
     const [results, setResults] = React.useState<SearchResult>(null); // TODO: type this
+
+    // Some browsers will hold onto form inputs upon page return, so let's just
+    // clear any initial input upon load, or return to this page.
+    useEffect(() => {
+        if (searchInputRef.current) {
+            searchInputRef.current.value = '';
+        }
+    }, [searchInputRef]);
 
     const checkIfEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key.toLowerCase() === 'enter') {
@@ -41,6 +49,7 @@ export default function SearchCharacters({}: Props) {
                 query: gql`
                 query {
                     searchCharacters(text: "${text}") {
+                        id
                         name
                         height
                         mass
@@ -49,6 +58,7 @@ export default function SearchCharacters({}: Props) {
                         eye_color
                         birth_year
                         gender
+                        url
                     }
                 }
             `,
@@ -65,7 +75,7 @@ export default function SearchCharacters({}: Props) {
         async (e: React.MouseEvent<HTMLButtonElement>) => {
             await performSearch(searchText);
         },
-        []
+        [searchText]
     );
 
     return (

@@ -1,7 +1,10 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 
+const BASE_DOMAIN = process.env.BASE_DOMAIN || '';
+console.log(`base domain = ${BASE_DOMAIN}`);
+
 const client = new ApolloClient({
-    uri: '/api/graphql',
+    uri: BASE_DOMAIN + '/api/graphql',
     cache: new InMemoryCache(),
 });
 

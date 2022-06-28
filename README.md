@@ -1,5 +1,7 @@
 # StarWars API Demo Application
 
+See demo of [this project here](https://swapi-nextjs-graphql.vercel.app/).
+
 ## Purpose
 
 This application demonstrates a Next.js application that uses a variety of
@@ -72,6 +74,7 @@ be coded for tests, but leaves a good foundation for adding them.
 
 ## Reference
 
+-   [This SWapi NextJS GraphQL Demo](https://swapi-nextjs-graphql.vercel.app/)
 -   [React](https://reactjs.org/)
 -   [NextJS](https://nextjs.org/)
 -   [StarWars API](https://swapi.dev/)

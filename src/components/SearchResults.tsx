@@ -1,6 +1,7 @@
 import React from 'react';
 import { SearchResult } from './types';
 import Link from 'next/link';
+import { FiChevronRight } from 'react-icons/fi';
 
 type Props = {
     searchInProgress: boolean;
@@ -74,7 +75,7 @@ function SearchResults({ searchInProgress, results }: Props) {
                             key={'person-' + idx}
                             className="flex justify-center"
                         >
-                            <div className="block m-2 p-4 rounded-lg shadow-lg bg-white max-w-sm">
+                            <div className="block m-2 p-4 rounded-lg shadow-lg bg-gray-100 max-w-sm">
                                 <h5 className="text-gray-900 text-xl leading-tight font-medium mb-2">
                                     {r.name}
                                 </h5>
@@ -87,9 +88,10 @@ function SearchResults({ searchInProgress, results }: Props) {
                                 <Link href={moreUrl}>
                                     <button
                                         type="button"
-                                        className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+                                        className=" inline-block px-6 py-2.5 bg-yellow-300 hover:bg-yellow-200 text-black font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-yellow-400 active:shadow-lg transition duration-150 ease-in-out"
                                     >
-                                        See more
+                                        See more{' '}
+                                        <FiChevronRight className="inline" />
                                     </button>
                                 </Link>
                             </div>

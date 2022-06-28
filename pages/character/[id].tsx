@@ -1,10 +1,23 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
 import Head from 'next/head';
 import { gql, useQuery } from '@apollo/client';
+import { FiArrowLeftCircle } from 'react-icons/fi';
+import { IoCarSport, IoMaleFemale } from 'react-icons/io5';
+import { GiWeight } from 'react-icons/gi';
+import { BsCalendar2Week } from 'react-icons/bs';
+import {
+    RiSendPlaneFill,
+    RiGhostSmileLine,
+    RiEyeLine,
+    RiRulerLine,
+    RiFilmFill,
+} from 'react-icons/ri';
+import { BiMap } from 'react-icons/bi';
+import { MdFace } from 'react-icons/md';
 
 import styles from '../../styles/Home.module.css';
-import { fileURLToPath } from 'url';
 
 const CharacterID: NextPage = () => {
     const router = useRouter();
@@ -64,30 +77,38 @@ const CharacterID: NextPage = () => {
             </Head>
 
             <main className={styles.searchmain}>
-                <div className="lg:w-1/2 md:w-3/4 sm:w-full grid grid-cols-1 place-items-center drop-shadow-lg bg-white pb-4">
+                <div className="lg:w-3/4 md:w-4/5 sm:w-full grid grid-cols-1 place-items-center drop-shadow-lg bg-white pb-4">
                     <div className="text-center p-2 m-0">
                         <h1 className="text-4xl font-bold m-0 p-0">
                             {data && data.getCharacter.name}
                         </h1>
                     </div>
-                    <div className="text-center pb-0 mb-0 p-1 pt-2 sm:w-full md:w-3/4 lg:w-1/2">
+                    <div className="text-center pb-8 mb-0 p-1 pt-2 sm:w-full md:w-3/4 lg:w-1/2">
                         <span className="pb-4 block text-center text-sm text-gray-300">
                             As provided by SWAPI
+                        </span>
+                        <span className="text-center text-sky-500 underline pb-4">
+                            <FiArrowLeftCircle className="inline mr-2" />
+                            <Link href="/">Back to Search</Link>
                         </span>
                     </div>
                     <table className="min-w-full">
                         <thead className="border-b">
                             <tr>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <RiRulerLine className="inline" />
                                     Height (cm)
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <GiWeight className="inline" />
                                     Mass (kg)
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <BsCalendar2Week className="inline" />
                                     Birth Year
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <IoMaleFemale className="inline" />
                                     Gender
                                 </th>
                             </tr>
@@ -111,15 +132,18 @@ const CharacterID: NextPage = () => {
                         <thead className="border-b">
                             <tr>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <MdFace className="inline" />
                                     Hair Color
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
                                     Skin Color
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <RiEyeLine className="inline" />
                                     Eye Color
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <BiMap className="inline" />
                                     Homeworld
                                 </th>
                             </tr>
@@ -143,15 +167,19 @@ const CharacterID: NextPage = () => {
                         <thead className="border-b">
                             <tr>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <RiFilmFill className="inline" />
                                     Films
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <IoCarSport className="inline" />
                                     Vehicles
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <RiSendPlaneFill className="inline" />
                                     Starships
                                 </th>
                                 <th className="text-sm font-medium text-gray-900 px-4 py-2 text-center">
+                                    <RiGhostSmileLine className="inline" />
                                     Species
                                 </th>
                             </tr>

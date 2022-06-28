@@ -5,6 +5,7 @@ import client from '../graphql/client';
 
 import SearchResults from './SearchResults';
 import { SearchResult } from './types';
+import { FiSearch } from 'react-icons/fi';
 
 type Props = {};
 
@@ -106,7 +107,7 @@ export default function SearchCharacters({}: Props) {
                 />{' '}
                 <button
                     className={
-                        'text-white m-2 p-2 rounded bg-blue-500 hover:bg-blue-600 transition' +
+                        'text-black m-2 p-2 rounded bg-yellow-300 hover:bg-yellow-200 active:bg-yellow-400 transition' +
                         (searchText && !searchInProgress
                             ? ''
                             : ' opacity-50 cursor-not-allowed')
@@ -114,7 +115,8 @@ export default function SearchCharacters({}: Props) {
                     onClick={onSearch}
                     disabled={!searchText || searchInProgress}
                 >
-                    Search
+                    <FiSearch className="m-2 mr-0 inline align-middle" />
+                    <span className="m-2 align-middle">Search</span>
                 </button>
             </div>
             <SearchResults

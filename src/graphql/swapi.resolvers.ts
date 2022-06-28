@@ -15,7 +15,12 @@ const resolvers = {
                 return [];
             }
         },
-        getCharacter: async (parent: {}, args: {}, context: {}, info: {}) => {
+        getCharacter: async (
+            parent: {},
+            args: { id: string },
+            context: {},
+            info: {}
+        ) => {
             try {
                 const r = await axios.get(
                     `https://swapi.dev/api/people/${args.id}`
@@ -27,7 +32,7 @@ const resolvers = {
         },
         searchCharacters: async (
             parent: {},
-            args: {},
+            args: { text: string },
             context: {},
             info: {}
         ) => {

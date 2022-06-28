@@ -76,7 +76,7 @@ export default function SearchCharacters({}: Props) {
         async (e: React.MouseEvent<HTMLButtonElement>) => {
             await performSearch(searchText);
         },
-        [searchText]
+        [searchText, performSearch]
     );
 
     return (

@@ -16,6 +16,7 @@ import {
 } from 'react-icons/ri';
 import { BiMap } from 'react-icons/bi';
 import { MdFace } from 'react-icons/md';
+import { Film, Species, Starship, Vehicle } from '../../src/components/types';
 
 import styles from '../../styles/Home.module.css';
 
@@ -187,7 +188,7 @@ const CharacterID: NextPage = () => {
                         <tbody>
                             <tr className="border-0">
                                 <td className="px-4 py-2 whitespace-nowrap text-sm font-light text-gray-900 text-center">
-                                    {c.films.map((f) => {
+                                    {c.films.map((f: Film) => {
                                         // TODO: display better date
                                         return (
                                             <p key={`film-${f.id}`}>
@@ -197,7 +198,7 @@ const CharacterID: NextPage = () => {
                                     })}
                                 </td>
                                 <td className="text-sm text-gray-900 font-light px-4 py-2 whitespace-nowrap text-center">
-                                    {c.vehicles.map((v) => {
+                                    {c.vehicles.map((v: Vehicle) => {
                                         return (
                                             <p key={`vehicle-${v.id}`}>
                                                 {v.name}
@@ -206,7 +207,7 @@ const CharacterID: NextPage = () => {
                                     })}
                                 </td>
                                 <td className="text-sm text-gray-900 font-light px-4 py-2 whitespace-nowrap text-center">
-                                    {c.starships.map((ss) => {
+                                    {c.starships.map((ss: Starship) => {
                                         return (
                                             <p key={`starship-${ss.id}`}>
                                                 {ss.name}
@@ -215,7 +216,7 @@ const CharacterID: NextPage = () => {
                                     })}
                                 </td>
                                 <td className="text-sm text-gray-900 font-light px-4 py-2 whitespace-nowrap text-center">
-                                    {c.species.map((s) => {
+                                    {c.species.map((s: Species) => {
                                         return (
                                             <p key={`species-${s.id}`}>
                                                 {s.name}

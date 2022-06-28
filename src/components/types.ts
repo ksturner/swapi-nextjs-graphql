@@ -5,13 +5,23 @@ export interface Homeworld {
 }
 export interface Film {
     id: string;
-    name?: string;
+    title?: string;
     director?: string;
     producer?: string;
     release_date?: string;
     // TODO: add more fields when needed
 }
 export interface Starship {
+    id: string;
+    name?: string;
+    // TODO: add more fields when needed
+}
+export interface Species {
+    id: string;
+    name?: string;
+    // TODO: add more fields when needed
+}
+export interface Vehicle {
     id: string;
     name?: string;
     // TODO: add more fields when needed
@@ -36,8 +46,8 @@ export interface Character {
     gender?: string;
     homeworld?: Homeworld;
     films?: Film[];
-    species?: string[];
-    vehicles?: string[];
+    species?: Species[];
+    vehicles?: Vehicle[];
     starships?: Starship[];
     created?: DateTime;
     edited?: DateTime;
